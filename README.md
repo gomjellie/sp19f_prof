@@ -2,5 +2,7 @@
 system programming 2019 fall 
 
 ## hw1. Analyze executables of "fact_iter.c"
-make
 
+- build and run 
+make
+./fact_iter 5 ## 5! 
