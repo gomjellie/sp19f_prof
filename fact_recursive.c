@@ -25,7 +25,7 @@ int main(int argc, char* argv[]) {
      * 
      * potential bug: overflow
      */
-	int input_number, res, i;
+	int input_number, res;
 	
 	if(argc < 2) {
 		puts("Usage: a.out num");
