@@ -11,6 +11,9 @@ make
 
 ## hw2. fact_iter.c 를 컴파일 한 후 실행파일을 assembly 언어로 disassemble 하여 main 함수의 소스코드가 어떻게 assembly 언어로 바뀌었는지 분석하시오. 
 
+```sh
+objdump -d ./fact_itor > fact_itor.dump
+```
 
 
 ## hw3. factorial을 recursive 함수를 이용해 계산하는 소스코드 fact_recursive.c 를 만들고 위와 동일한 방식으로 소스코드를 분석하시오. 이 때 아래와 같은 명령어로 fact_recursive.c 을 컴파일할 수 있도록 Makefile 을 수정하시오. 
