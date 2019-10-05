@@ -1,8 +1,7 @@
-#include<stdio.h>
-#include<stdlib.h>
+#include <stdio.h>
+#include <stdlib.h>
 
-int main(int argc, char* argv[])
-{
+int main(int argc, char* argv[]) {
 	int n, fact, i;
 	
 	n = atoi(argv[1]);
@@ -15,4 +14,3 @@ int main(int argc, char* argv[])
 	printf("%d\n", fact);
 	return 0;
 }
-
