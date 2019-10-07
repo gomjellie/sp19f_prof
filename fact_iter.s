@@ -1,5 +1,5 @@
 	.file	"fact_iter.c"
-	.section	.rodata
+	.section	.rodata.str1.1,"aMS",@progbits,1
 .LC0:
 	.string	"Usage: a.out num"
 .LC1:
@@ -10,55 +10,42 @@
 	.globl	main
 	.type	main, @function
 main:
-.LFB2:
+.LFB38:
 	.cfi_startproc
-	pushq	%rbp
+	subq	$8, %rsp
 	.cfi_def_cfa_offset 16
-	.cfi_offset 6, -16
-	movq	%rsp, %rbp
-	.cfi_def_cfa_register 6
-	subq	$32, %rsp
-	movl	%edi, -20(%rbp)
-	movq	%rsi, -32(%rbp)
-	cmpl	$1, -20(%rbp)
+	cmpl	$1, %edi
 	jg	.L2
 	movl	$.LC0, %edi
 	call	puts
 	movl	$.LC1, %edi
 	call	puts
-	movl	$0, %eax
 	jmp	.L3
 .L2:
-	movq	-32(%rbp), %rax
-	addq	$8, %rax
-	movq	(%rax), %rax
-	movq	%rax, %rdi
-	call	atoi
-	movl	%eax, -4(%rbp)
-	movl	$1, -12(%rbp)
-	movl	$1, -8(%rbp)
+	movq	8(%rsi), %rdi
+	movl	$10, %edx
+	movl	$0, %esi
+	call	strtol
+	movl	$1, %ecx
+	movl	$1, %edx
 	jmp	.L4
 .L5:
-	movl	-12(%rbp), %eax
-	imull	-8(%rbp), %eax
-	movl	%eax, -12(%rbp)
-	addl	$1, -8(%rbp)
+	imull	%ecx, %edx
+	addl	$1, %ecx
 .L4:
-	movl	-8(%rbp), %eax
-	cmpl	-4(%rbp), %eax
+	cmpl	%eax, %ecx
 	jle	.L5
-	movl	-12(%rbp), %eax
-	movl	%eax, %esi
-	movl	$.LC2, %edi
+	movl	$.LC2, %esi
+	movl	$1, %edi
 	movl	$0, %eax
-	call	printf
-	movl	$0, %eax
+	call	__printf_chk
 .L3:
-	leave
-	.cfi_def_cfa 7, 8
+	movl	$0, %eax
+	addq	$8, %rsp
+	.cfi_def_cfa_offset 8
 	ret
 	.cfi_endproc
-.LFE2:
+.LFE38:
 	.size	main, .-main
 	.ident	"GCC: (Ubuntu 5.4.0-6ubuntu1~16.04.11) 5.4.0 20160609"
 	.section	.note.GNU-stack,"",@progbits
