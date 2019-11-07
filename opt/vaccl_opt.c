@@ -33,12 +33,14 @@ void combine(vec_t* v, int *dest)
 {
 	assert(dest);
 	*dest = 0;
+    int tmp_dest = 0;
 	int length = vec_length(v);
 	for(int i = 0; i < length; i++){
 		int val; 
 		get_vec_element(v, i, &val);
-		*dest = *dest + val; 
+        tmp_dest += val;
 	}
+    *dest = tmp_dest;
 }
 
 void init(vec_t* v)
