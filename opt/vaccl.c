@@ -4,7 +4,7 @@
 #include<limits.h>
 
 //#define MAX_NUM 10000000
-#define MAX_NUM INT_MAX
+#define MAX_NUM INT_MAX/128
 
 struct vec {
 	int len;
