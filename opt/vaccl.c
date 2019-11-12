@@ -5,6 +5,7 @@
 
 //#define MAX_NUM 10000000
 #define MAX_NUM INT_MAX
+//#define MAX_NUM 100000
 
 struct vec {
 	int len;

@@ -1,0 +1,19 @@
+
+
+##### Measure the cache misses ######
+
+1. Build matrix_rc / matrix_cr
+$ make
+
+
+2. Measure cache-misses with perf 
+
+perf record -g -e cache-misses ./matrix_rc 
+
+
+3. Report perf results 
+
+perf report 
+
+
+4. Compare the cache-misses of "matrix_rc" and "matrix_cr"
