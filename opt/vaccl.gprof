@@ -7,7 +7,6 @@ Each sample counts as 0.01 seconds.
  35.56      0.13     0.06        1    60.45    60.45  init
  23.71      0.17     0.04        1    40.30   110.83  combine
   0.00      0.17     0.00 16777216     0.00     0.00  vec_length
-
  %         the percentage of the total running time of the
 time       program used by this function.
 
